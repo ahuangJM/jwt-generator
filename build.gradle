@@ -12,6 +12,9 @@ repositories {
 }
 
 dependencies {
+    // Nimbus
+    implementation 'com.nimbusds:nimbus-jose-jwt:9.30.2'
+
     // Lombok
     compileOnly 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
