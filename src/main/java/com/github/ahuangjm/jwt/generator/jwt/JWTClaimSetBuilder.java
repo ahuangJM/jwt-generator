@@ -18,17 +18,17 @@ public abstract class JWTClaimSetBuilder<T extends JWTClaims> {
 
     JWTClaimsSet.Builder buildInternal() {
         return new JWTClaimsSet.Builder()
-                .claim(JWTClaimNames.Public.AZP, this.jwtClaims.getAzp())
-                .claim(JWTClaimNames.Public.CSRF, this.jwtClaims.getCsrf())
-                .claim(JWTClaimNames.Public.SID, this.jwtClaims.getSid())
-                .claim(JWTClaimNames.Public.EMAIL, this.jwtClaims.getEmail())
-                .claim(JWTClaimNames.Public.EMAIL_VERIFIED, this.jwtClaims.getEmailVerified())
-                .claim(JWTClaimNames.Public.LOCALE, this.jwtClaims.getLocale())
-                .claim(JWTClaimNames.Public.ZONEINFO, this.jwtClaims.getZoneInfo())
-                .claim(JWTClaimNames.Registered.IAT, this.jwtClaims.getIat())
-                .claim(JWTClaimNames.Registered.AUD, this.jwtClaims.getAud())
-                .claim(JWTClaimNames.Registered.EXP, this.jwtClaims.getExp())
-                .claim(JWTClaimNames.Registered.ISS, this.jwtClaims.getIss())
-                .claim(JWTClaimNames.Registered.SUB, this.jwtClaims.getSub());
+                .claim(JWTClaimNames.Public.AZP, this.jwtClaims.getPublicClaims().getAzp())
+                .claim(JWTClaimNames.Public.CSRF, this.jwtClaims.getPublicClaims().getCsrf())
+                .claim(JWTClaimNames.Public.SID, this.jwtClaims.getPublicClaims().getSid())
+                .claim(JWTClaimNames.Public.EMAIL, this.jwtClaims.getPublicClaims().getEmail())
+                .claim(JWTClaimNames.Public.EMAIL_VERIFIED, this.jwtClaims.getPublicClaims().getEmailVerified())
+                .claim(JWTClaimNames.Public.LOCALE, this.jwtClaims.getPublicClaims().getLocale())
+                .claim(JWTClaimNames.Public.ZONEINFO, this.jwtClaims.getPublicClaims().getZoneInfo())
+                .claim(JWTClaimNames.Registered.IAT, this.jwtClaims.getRegisteredClaims().getIat())
+                .claim(JWTClaimNames.Registered.AUD, this.jwtClaims.getRegisteredClaims().getAud())
+                .claim(JWTClaimNames.Registered.EXP, this.jwtClaims.getRegisteredClaims().getExp())
+                .claim(JWTClaimNames.Registered.ISS, this.jwtClaims.getRegisteredClaims().getIss())
+                .claim(JWTClaimNames.Registered.SUB, this.jwtClaims.getRegisteredClaims().getSub());
     }
 }
