@@ -4,6 +4,7 @@ import lombok.Data;
 import sun.util.calendar.ZoneInfo;
 
 import java.util.Locale;
+import java.util.Map;
 
 @Data
 public abstract class JWTClaims implements RegisteredClaims, PublicClaims, PrivateClaims {
@@ -20,4 +21,6 @@ public abstract class JWTClaims implements RegisteredClaims, PublicClaims, Priva
     private Locale locale;
     private String sid;
     private String csrf;
+
+    private Map<String, String> unknownClaims;
 }
